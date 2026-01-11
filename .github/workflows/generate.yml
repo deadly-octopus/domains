@@ -18,7 +18,7 @@ jobs:
 
       - name: Generate file
         run: |
-          sed 's/^/DOMAIN-SUFFIX,/' domains.txt > domains-sr.txt
+          sed 's/^/DOMAIN-SUFFIX,/' domains.txt > domains-sr.list
 
       - name: Commit result
         run: |
