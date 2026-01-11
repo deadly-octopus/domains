@@ -24,6 +24,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add domains-sr.txt
-          git commit -m "Auto-generate domains-formatted.txt" || true
+          git add domains-sr.list
+          git commit -m "Auto-generate domains-sr.list" || true
           git push
