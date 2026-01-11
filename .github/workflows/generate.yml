@@ -1,0 +1,26 @@
+name: Generate formatted domains
+
+on:
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate file
+        run: |
+          sed 's/^/DOMAIN-SUFFIX,/' domains.txt > domains-sr.txt
+
+      - name: Commit result
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add domains-sr.txt
+          git commit -m "Auto-generate domains-formatted.txt" || true
+          git push
