@@ -222,3 +222,4 @@ yt3.googleusercontent.com
 ytimg.com
 ytimg.l.google.com
 yubico.com
+phncdn.com
